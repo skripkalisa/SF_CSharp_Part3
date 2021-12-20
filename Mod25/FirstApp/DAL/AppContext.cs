@@ -17,7 +17,8 @@ namespace FirstApp.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer( @"Server=localhost;Database=EF;User Id=SA;Password=51tuatIon;TrustServerCertificate=true;");
+            string connectionString = new Credentials().GetDbCredentials();
+            optionsBuilder.UseSqlServer( $@"{connectionString}");
         }
     }
 }

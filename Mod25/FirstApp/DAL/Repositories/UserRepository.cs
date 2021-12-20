@@ -8,54 +8,49 @@ namespace FirstApp.DAL.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AppContext db;
+        private readonly AppContext _db;
 
         public UserRepository(AppContext context)
         {
-            db = context;
+            _db = context;
         }
         public int AddUser(UserEntity userEntity)
         {
-            // using var db = new AppContext();
             var user = new User
             {
                 Name = userEntity.Name,
                 Email = userEntity.Email
             };
 
-            db.Users.Add(user);
-            return db.SaveChanges();
+            _db.Users.Add(user);
+            return _db.SaveChanges();
         }
         
         public User FindById(int id)
         {
-            // using var db = new AppContext();
-            var user = db.Users.Where(user=> user.Id == id);
+            var user = _db.Users.Where(user=> user.Id == id);
             return user.FirstOrDefault();
         }
 
         public int UpdateUser(UserEntity userEntity)
         {
-            // using var db = new AppContext();
             var user = FindById(userEntity.Id);
             user.Name = userEntity.Name;
-            return db.SaveChanges();
+            return _db.SaveChanges();
 
         }
 
         public IEnumerable<User> FindAll()
         {
-            // using var db = new AppContext();
-            var users = db.Users.ToList();
+            var users = _db.Users.ToList();
             return users;
         }
 
         public int DeleteById(int id)
         {
-            // using var db = new AppContext();
             var user = FindById(id);
-            db.Remove(user);
-            return db.SaveChanges();
+            _db.Remove(user);
+            return _db.SaveChanges();
         }
     }
     

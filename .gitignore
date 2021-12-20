@@ -12,7 +12,7 @@
 *.userosscache
 *.sln.docstates
 
-
+Credentials.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

@@ -45,49 +45,42 @@ namespace FirstApp.BLL.Services
         }
         public IEnumerable<Book> BooksByTitle(string title)
         {
-            Console.WriteLine("BooksByTitle");
             var books = _db.Books.OrderBy(book=> book.Title == title).ToList();
             return books;
         }   
         
         public List<Book> BooksByYear(int year)
         {
-            Console.WriteLine("BooksByYear");
             var books = _db.Books.OrderByDescending(book=> book.Year == year).ToList();
             return books;
         }
                 
         public List<Book> BooksByGenreAndYearRange(string genre, int yearFrom, int yearTo)
         {
-            Console.WriteLine("BooksByGenreAndYearRange");
             var books = _db.Books.Where(book=> book.Genre.ToString() == genre && book.Year > yearFrom && book.Year < yearTo).ToList();
             return books;
         }
         
         public int BooksByAuthorTotal(string author)
         {
-            Console.WriteLine("BooksByAuthorTotal");
             var books = _db.Books.Where(book=> book.Author == author).ToList();
             return books.Count;
         }  
         
         public int BooksByGenreTotal(string genre)
         {
-            Console.WriteLine("BooksByGenreTotal");
             var books = _db.Books.Where(book=> book.Genre == genre).ToList();
             return books.Count;
         }
 
         public int BooksByUserTotal(int userId)
         {
-            Console.WriteLine("BooksByUserTotal");
             var books = _db.Books.Where(book=> book.UserId == userId).ToList();
             return books.Count;
         }  
         
         public Book BooksLastBook()
         {
-            Console.WriteLine("BooksLastBook");
             var book = _db.Books.ToList().LastOrDefault();
             return book;
         }
