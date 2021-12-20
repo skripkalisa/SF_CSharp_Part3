@@ -7,6 +7,7 @@ namespace FirstApp.PLL.Views
 
         private static readonly AppContext Context = new();
         private readonly ManageBooksView _booksView = new(Context);
+        private readonly ManageUsersView _usersView = new(Context);
 
         public void Show()
         {
@@ -28,7 +29,7 @@ namespace FirstApp.PLL.Views
                     }
                     case "1":
                     {
-                        // Program.AuthenticationView.Show();
+                        _usersView.ManageUsers();
                         break;
                     }
 

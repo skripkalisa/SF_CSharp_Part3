@@ -8,9 +8,15 @@ namespace FirstApp.DAL.Repositories
 {
     public class UserRepository : IUserRepository
     {
+        private readonly AppContext db;
+
+        public UserRepository(AppContext context)
+        {
+            db = context;
+        }
         public int AddUser(UserEntity userEntity)
         {
-            using var db = new AppContext();
+            // using var db = new AppContext();
             var user = new User
             {
                 Name = userEntity.Name,
@@ -23,14 +29,14 @@ namespace FirstApp.DAL.Repositories
         
         public User FindById(int id)
         {
-            using var db = new AppContext();
+            // using var db = new AppContext();
             var user = db.Users.Where(user=> user.Id == id);
             return user.FirstOrDefault();
         }
 
         public int UpdateUser(UserEntity userEntity)
         {
-            using var db = new AppContext();
+            // using var db = new AppContext();
             var user = FindById(userEntity.Id);
             user.Name = userEntity.Name;
             return db.SaveChanges();
@@ -39,14 +45,14 @@ namespace FirstApp.DAL.Repositories
 
         public IEnumerable<User> FindAll()
         {
-            using var db = new AppContext();
+            // using var db = new AppContext();
             var users = db.Users.ToList();
             return users;
         }
 
         public int DeleteById(int id)
         {
-            using var db = new AppContext();
+            // using var db = new AppContext();
             var user = FindById(id);
             db.Remove(user);
             return db.SaveChanges();
