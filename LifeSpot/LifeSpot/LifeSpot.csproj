@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Mod27</RootNamespace>
+        <RootNamespace>LifeSpot</RootNamespace>
     </PropertyGroup>
 
 </Project>
