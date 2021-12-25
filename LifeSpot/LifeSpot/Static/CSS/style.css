@@ -1,58 +1,107 @@
-/* Простые селекторы */
+body {
+  padding: 0;
+  margin: 0;
+}
+body,
 .video-container {
-  display: inline-block;
-  padding-left: 1%;
-  padding-top: 1%;
+  background-color: #fafafa;
+}
+header,
+footer {
+  background: rgba(33,67,250,0.745);
+  padding: 1rem 2rem;
+  box-shadow: #faf0e6 1px 1px 1px;
+}
+/* Простые селекторы */
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 0.5fr 4fr 0.5fr;
+  gap: 1em 0;
+  grid-template-areas: 'a b' 'a c' 'a d';
+}
+.sidebar {
+  grid-area: a;
+  z-index: 1 /* Сайд-бар будет поверх остальных элементов */;
+  background-color: #212121 /* Черный цвет фона (задан в виде кода) */;
+  font-size: large;
+  position: relative;
 }
 .navbar {
-  color: #a9a9a9;
-  padding-left: 15%;
+  color: #afafaf;
+  padding: 1rem;
+  margin: 0 auto;
+  position: sticky;
+  top: 1rem;
+}
+a {
+  text-decoration: none;
 }
 /* Стили панели навигации */
 .navbar p {
-  color: #a9a9a9;
-  padding-left: 15%;
+  color: #afafaf;
 }
 /* Стили панели навигации при наведении мышью */
 .navbar p:hover {
-  color: #f0f8ff;
+  color: #fafafa;
 }
 /* Глобальные стили для хедеров на всём сайте */
 header {
   color: #000;
-  padding-left: 1%;
-  padding-top: 1.2%;
 }
 /* Стиль хедера для главной страницы имеет приоритет,
 так как используется селектор по идентификатору */
-#header-index {
-  color: #44453f;
+.header {
+  color: #fafafa;
+  grid-area: b;
 }
-footer {
-  position: absolute;
-  bottom: 0;
+.form__search_input {
+  padding: 0.5rem 1rem;
+}
+.form__search_input:focus {
+  box-shadow: #fafafa 0 0 0.2rem;
+}
+.form__search_button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(33,67,250,0.745);
+  border-radius: 0.25rem;
+  background: #f7f7f7;
+}
+.form__search_button:hover {
+  background: #fff;
+  text-shadow: rgba(33,67,250,0.745) 0.025rem 0.025rem 0.025rem;
+}
+.main {
+  grid-area: c;
+  padding: 0 2rem;
+}
+.video-container {
+  display: inline-block;
+  padding: 1rem;
+  width: 560px;
+  height: 315px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.footer {
+  grid-area: d;
   font-size: medium;
-  color: #696969;
+  color: #fafafa;
   line-height: 66%;
 }
-aside {
-  height: 100% /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */;
-  width: 10%;
-  position: absolute /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */;
-  z-index: 1 /* Сайд-бар будет поверх остальных элементов */;
-  top: 0 /* Сайдбар будет в самой верхней части страницы */;
-  left: 0;
-  background-color: #111 /* Черный цвет фона (задан в виде кода) */;
-  overflow-x: hidden /* Отключаем горизонтальную прокрутку */;
-  padding-top: 2%;
-  font-size: large;
+.footer a {
+  color: #d0d1d2;
 }
-body {
-  padding-left: 11%;
+.footer a:hover {
+  color: #fafafa;
 }
-header,
-footer,
-body,
-.video-container {
-  background-color: #faf0e6;
+@media screen and (max-width: 800px) {
+  .video-container {
+    width: 56vw;
+    height: 31vw;
+  }
 }
