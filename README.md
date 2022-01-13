@@ -26,9 +26,9 @@
 
 - [Модуль 26. Введение в HTML](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod26)
 
-- [Модуль 27. Введение в CSS](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod27)
+- [Модуль 27. Введение в CSS](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod27/LifeSpot)
 
-- [Модуль 28. Введение в JavaScript](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod28)
+- [Модуль 28. Введение в JavaScript](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod28/LifeSpot)
 
 - [Модуль 29. Функции](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod29)
 
