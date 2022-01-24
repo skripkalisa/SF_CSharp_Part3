@@ -55,13 +55,13 @@ header {
   color: #fafafa;
   grid-area: b;
 }
-.form__search_input {
+.form__input_search {
   padding: 0.5rem 1rem;
 }
-.form__search_input:focus {
+.form__input_search:focus {
   box-shadow: #fafafa 0 0 0.2rem;
 }
-.form__search_button {
+.form__button_search {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -69,13 +69,27 @@ header {
   border-radius: 0.25rem;
   background: #f7f7f7;
 }
-.form__search_button:hover {
+.form__button_search:hover {
   background: #fff;
   text-shadow: rgba(33,67,250,0.745) 0.025rem 0.025rem 0.025rem;
 }
 .main {
   grid-area: c;
   padding: 0 2rem;
+}
+.review-container,
+.reviews,
+.review-button {
+  display: inline-block;
+  margin-top: 0.5em;
+  padding-left: 1%;
+  padding-top: 1%;
+}
+.review-text {
+  display: block;
+  margin-top: 0.5em;
+  padding-left: 1%;
+  padding-top: 1%;
 }
 .video-container {
   display: inline-block;
