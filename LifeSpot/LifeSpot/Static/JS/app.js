@@ -1,6 +1,3 @@
-console.clear()
-
-
 const inp = document.querySelector(".form__input_search")
 
 function getElements(){// Получим все контейнеры с видео

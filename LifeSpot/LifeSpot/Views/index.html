@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <link rel="stylesheet" href="../Static/CSS/style.css" type="text/css">
+    <script src="../Static/JS/index.js"></script>
     <script defer src="../Static/JS/app.js"></script>
+    <script>
+        // обработка сессии
+        handleSession(logger,  checker /* Коллбек-функции */);
+
+        // функция для получения пользовательского ввода   
+        const inputParseFunction = function(){
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
+    </script>
 </head>
 <body class="wrapper">
 <!--HEADER-->
@@ -12,7 +22,7 @@
 <main class="main">
 
     <div class="video-container">
-        <iframe  src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player"
+        <iframe src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -20,7 +30,7 @@
 
     </div>
     <div class="video-container">
-        <iframe  src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player"
+        <iframe src="https://www.youtube.com/embed/wCcMcaiRbhM" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -28,7 +38,7 @@
 
     </div>
     <div class="video-container">
-        <iframe  src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player"
+        <iframe src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
