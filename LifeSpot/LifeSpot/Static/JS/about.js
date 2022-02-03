@@ -104,6 +104,13 @@ function addLike(id) {
    element.innerText = array.join(' ')
 }
 
+/*
+*
+* 
+// Slider logic
+* 
+* 
+ */
 
 const sliderIcons = document.querySelectorAll('.slider-column');
 const flippers = document.querySelectorAll('.flipper')

@@ -23,7 +23,7 @@ let checker = function ( newVisit ){
 * */
 let logger = function () {
    console.log('Начало сессии: ' + window.sessionStorage.getItem("startDate") )
-   console.log('Даныне клиента: ' + window.sessionStorage.getItem("userAgent") )
+   console.log('Данные клиента: ' + window.sessionStorage.getItem("userAgent") )
    console.log('Возраст пользователя: ' + window.sessionStorage.getItem("userAge"))
 }
 
