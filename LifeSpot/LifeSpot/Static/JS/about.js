@@ -1,3 +1,5 @@
+console.clear()
+
 /*
 * Конструктор, через который создаётся комментарий
 *
@@ -100,4 +102,56 @@ function addLike(id) {
   
    // Обновим текст элемента
    element.innerText = array.join(' ')
+}
+
+
+const sliderIcons = document.querySelectorAll('.slider-column');
+const flippers = document.querySelectorAll('.flipper')
+
+sliderIcons.forEach(icon =>{
+    icon.addEventListener('click', currentSlide)
+})
+
+flippers.forEach(flipper =>{
+    flipper.addEventListener('click', plusSlides)
+})
+
+let slideIndex = 0;
+showSlides(slideIndex);
+
+function getSlideIndex(obj){
+    const list = Array.prototype.slice.call(sliderIcons)
+    slideIndex =  list.indexOf(obj)   
+}
+
+function plusSlides() {
+    if(this.classList.contains('prev')) showSlides(--slideIndex);
+    else
+    showSlides(++slideIndex );
+}
+
+function currentSlide() {
+    getSlideIndex(this)
+    showSlides(slideIndex);
+}
+
+function showSlides(n) {
+    const slides = document.querySelectorAll(".slide");
+    const icons = document.querySelectorAll(".img-dimmed");
+    const captionText = document.querySelector("#caption");
+    
+    for(const slide of slides){
+        slide.classList.remove('active')
+        slide.style.display = 'none'
+    }
+
+    if (n >= slides.length) {slideIndex = 0}
+    if (n < 0) {slideIndex = slides.length -1 }
+    
+    for(const icon of icons){
+        icon.classList.remove('active')
+    }
+    slides[slideIndex].style.display = "block";
+    icons[slideIndex].classList.add('active')
+    captionText.innerHTML = icons[slideIndex].alt;
 }
