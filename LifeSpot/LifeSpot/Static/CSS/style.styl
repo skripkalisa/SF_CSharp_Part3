@@ -1,54 +1,187 @@
+$colorDark = #212121
+$colorSoft = #d0d1d2
+$colorLight = #fafafa
+$colorDimmed = #afafaf
+$colorAccent = #2143fabe
+
+body
+  padding 0
+  margin 0
+
+body, .video-container
+  background-color $colorLight
+
+header, footer
+  background $colorAccent
+  padding 1rem 2rem
+  box-shadow linen 1px 1px 1px
+
 /* Простые селекторы */
-.video-container
-  display inline-block
-  padding-left 1%
-  padding-top 1%
+.wrapper
+  display grid
+  grid-template-columns auto 1fr
+  grid-template-rows 0.5fr 4fr 0.5fr
+  gap 1em 0
+  grid-template-areas 'a b' 'a c' 'a d'
+
+.sidebar
+  grid-area a
+  z-index 1 /* Сайд-бар будет поверх остальных элементов */
+  background-color $colorDark /* Черный цвет фона (задан в виде кода) */
+  font-size large
+  position relative
 
 .navbar
-  color darkgray
-  padding-left 15%
+  color $colorDimmed
+  padding 1rem
+  margin 0 auto
+  position sticky
+  top 1rem
+
+a
+  text-decoration none
 
 /* Стили панели навигации */
 .navbar p
-  color darkgray
-  padding-left 15%
+  color $colorDimmed
 
 /* Стили панели навигации при наведении мышью */
 .navbar p:hover
-  color aliceblue
+  color $colorLight
 
 /* Глобальные стили для хедеров на всём сайте */
 header
   color black
-  padding-left 1%
-  padding-top 1.2%
 
 /* Стиль хедера для главной страницы имеет приоритет,
 так как используется селектор по идентификатору */
-#header-index
-  color #44453f
+.header
+  color $colorLight
+  grid-area b
 
-footer
-  position absolute
-  bottom 0
+.form__input_search
+  padding 0.5rem 1rem
+
+.form__input_search:focus
+  box-shadow $colorLight 0 0 0.2rem
+
+.form__button_search
+  padding 0.5rem 1rem
+  font-size 1rem
+  font-weight 500
+  color $colorAccent
+  border-radius 0.25rem
+  background darken($colorLight, 1)
+
+  &:hover
+    background lighten($colorLight, 80)
+    text-shadow $colorAccent 0.025rem 0.025rem 0.025rem
+
+.main
+  grid-area c
+  padding 0 2rem
+
+.review-container, .reviews, .review-button
+  display block
+  margin-top 0.5em
+  padding-left 1%
+  padding-top 1%
+
+.review-text
+  display block
+  margin-top 0.5em
+  padding-left 1%
+  padding-top 1%
+
+.video-container
+  display inline-block
+  padding 1rem
+  width 560px
+  height 315px
+
+iframe
+  width 100%
+  height 100%
+
+.footer
+  grid-area d
   font-size medium
-  color dimgrey
+  color $colorLight
   line-height 66%
 
-aside
-  height 100% /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
-  width 10%
-  position absolute /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
-  z-index 1 /* Сайд-бар будет поверх остальных элементов */
-  top 0 /* Сайдбар будет в самой верхней части страницы */
-  left 0
-  background-color #111 /* Черный цвет фона (задан в виде кода) */
-  overflow-x hidden /* Отключаем горизонтальную прокрутку */
-  padding-top 2%
-  font-size large
+  a
+    color $colorSoft
 
-body
-  padding-left 11%
+    &:hover
+      color $colorLight
 
-header, footer, body, .video-container
-  background-color linen
+@media screen and (max-width 800px)
+  .video-container
+    width 56vw
+    height 31vw
+
+/* Position the image container (needed to position the left and right arrows) */
+.slider-container
+  position relative
+
+  img
+    vertical-align middle
+    width 100%
+
+/* Hide the images by default */
+.slide
+  display none
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor
+  cursor pointer
+
+/* Next & previous buttons */
+.prev, .next
+  cursor pointer
+  position absolute
+  top 30%
+  width auto
+  padding 1rem
+  color white
+  font-weight bold
+  font-size 2rem
+  border-radius 0 0.2rem 0.2rem 0
+  user-select none
+  -webkit-user-select none
+
+/* Position the "next button" to the right */
+.next
+  right 0
+  border-radius 0.2rem 0 0 0.2rem
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover
+  background-color rgba(0, 0, 0, 0.8)
+
+/* Number text (1/3 etc) */
+.numbertext
+  color $colorLight
+  font-size 1rem
+  padding 0.5rem 1rem
+  position absolute
+  top 0
+
+/* Container for image text */
+.caption-container
+  text-align center
+  background-color #222
+  padding 0.2rem 1rem
+  color white
+
+.slider-row
+  display flex
+  flex-flow row nowrap
+  flex-grow 0
+
+/* Add a transparency effect for thumnbail images */
+.img-dimmed
+  opacity 0.6
+
+.active, .img-dimmed:hover
+  opacity 1

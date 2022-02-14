@@ -5,4 +5,8 @@
         <RootNamespace>LifeSpot</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Static\IMG" />
+    </ItemGroup>
+
 </Project>
