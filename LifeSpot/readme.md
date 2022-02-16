@@ -42,5 +42,3 @@
 ## Скриншот
 
 ![Screenshot](pix/Mod31.png)
-
-> > > > > > > 51cecebaa096787a37da4f4e9c80853ff48125ad
