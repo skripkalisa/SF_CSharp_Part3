@@ -2,10 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
-
     </PropertyGroup>
-
 
 </Project>
