@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MvcStartApp.Middlewares;
 
 namespace MvcStartApp
 {
@@ -45,8 +46,9 @@ namespace MvcStartApp
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
+            // app.UseAuthorization();
+            app.UseMiddleware<LoggingMiddleware>();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
