@@ -1,13 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-namespace CoreAppStart
+namespace MvcStartApp
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).UseContentRoot(Directory.GetCurrentDirectory()).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -15,9 +22,7 @@ namespace CoreAppStart
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    // Переопределяем путь до статических файлов по умолчанию
-                    webBuilder.UseWebRoot("Views");
-                    
+                    webBuilder.UseContentRoot("Views");
                 });
     }
 }

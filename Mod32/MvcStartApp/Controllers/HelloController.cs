@@ -5,7 +5,11 @@ namespace MvcStartApp.Controllers
     public class HelloController : Controller
     {
         // GET
-        public IActionResult Index()
+        public string Index()
+        {
+            return "fuck!";
+        }        
+        public IActionResult Hello()
         {
             return View();
         }

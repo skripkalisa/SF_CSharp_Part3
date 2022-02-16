@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppStart", "CoreAppStart\CoreAppStart.csproj", "{7A792F55-DBD6-48E0-9F08-7E5F580E5657}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvsStartApp", "MvsStartApp", "{45FBE208-7469-42C4-9E36-25801E16254E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreAppStart", "CoreAppStart", "{F3D6F1A7-05DA-4849-8DDC-FDC97F023194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcStartApp", "MvcStartApp\MvcStartApp.csproj", "{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,13 @@ Global
 		{7A792F55-DBD6-48E0-9F08-7E5F580E5657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A792F55-DBD6-48E0-9F08-7E5F580E5657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A792F55-DBD6-48E0-9F08-7E5F580E5657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A792F55-DBD6-48E0-9F08-7E5F580E5657} = {F3D6F1A7-05DA-4849-8DDC-FDC97F023194}
+		{CC70C0A5-16A7-4D67-9A7D-84BC5BEBB2F8} = {45FBE208-7469-42C4-9E36-25801E16254E}
 	EndGlobalSection
 EndGlobal
