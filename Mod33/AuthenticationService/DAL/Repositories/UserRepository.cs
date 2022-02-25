@@ -1,17 +1,17 @@
-﻿using AuthenticationService.BLL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AuthenticationService.BLL.Models;
 
 namespace AuthenticationService.DAL.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly List<User> _users = new List<User>();
+        private readonly List<User> _users = new();
 
         public UserRepository()
         {
-            _users.Add(new User()
+            _users.Add(new User
             {
                 Id = Guid.NewGuid(),
                 FirstName = "Иван",
@@ -19,14 +19,14 @@ namespace AuthenticationService.DAL.Repositories
                 Email = "ivan@gmail.com",
                 Password = "11111122222qq",
                 Login = "ivanov",
-                Role = new Role()
+                Role = new Role
                 {
                     Id = 1,
                     Name = "Пользователь"
                 }
             });
 
-            _users.Add(new User()
+            _users.Add(new User
             {
                 Id = Guid.NewGuid(),
                 FirstName = "Максим",
@@ -34,14 +34,14 @@ namespace AuthenticationService.DAL.Repositories
                 Email = "maksim@gmail.com",
                 Password = "11",
                 Login = "maxim",
-                Role = new Role()
+                Role = new Role
                 {
                     Id = 2,
                     Name = "Администратор"
                 }
             });
 
-            _users.Add(new User()
+            _users.Add(new User
             {
                 Id = Guid.NewGuid(),
                 FirstName = "Антон",
@@ -49,7 +49,7 @@ namespace AuthenticationService.DAL.Repositories
                 Email = "anton@gmail.com",
                 Password = "111zzxc1",
                 Login = "anton",
-                Role = new Role()
+                Role = new Role
                 {
                     Id = 1,
                     Name = "Пользователь"

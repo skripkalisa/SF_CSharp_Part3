@@ -17,7 +17,7 @@ namespace AuthenticationService.PLL.Middlewares
 
         public async Task Invoke(HttpContext httpContext)
         {
-            _logger.WriteEvent("IP-адрес клиента: " + httpContext.Connection.RemoteIpAddress.ToString());
+            _logger.WriteEvent("IP-адрес клиента: " + httpContext.Connection.RemoteIpAddress);
             await _next(httpContext);
         }
     }

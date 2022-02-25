@@ -21,9 +21,9 @@ namespace AuthenticationService.PLL.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         private ILogger _logger;
-        private IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         public UserController(
             ILogger logger,
             IMapper mapper,
@@ -73,8 +73,8 @@ namespace AuthenticationService.PLL.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role.Name)
+                new(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                new(ClaimsIdentity.DefaultRoleClaimType, user.Role.Name)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(

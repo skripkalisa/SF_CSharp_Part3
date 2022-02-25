@@ -23,10 +23,8 @@ namespace AuthenticationService.PLL.Logging
             lock_.EnterWriteLock();
             try
             {
-                using (StreamWriter writer = new StreamWriter(logDirectory + "events.txt", append: true))
-                {
-                    writer.WriteLine(eventMessage);
-                }
+                using StreamWriter writer = new StreamWriter(logDirectory + "events.txt", append: true);
+                writer.WriteLine(eventMessage);
             }
             finally
             {
@@ -40,10 +38,8 @@ namespace AuthenticationService.PLL.Logging
             lock_.EnterWriteLock();
             try
             {
-                using (StreamWriter writer = new StreamWriter(logDirectory + "errors.txt", append: true))
-                {
-                    writer.WriteLine(errorMessage);
-                }
+                using StreamWriter writer = new StreamWriter(logDirectory + "errors.txt", append: true);
+                writer.WriteLine(errorMessage);
             }
             finally
             {
