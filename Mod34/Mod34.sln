@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAPI", "HomeAPI\HomeAPI.csproj", "{78959FB8-CA59-4D57-9C0C-2D248A1D525E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeApi.Contracts", "HomeApi.Contracts\HomeApi.Contracts.csproj", "{BA10C53E-CF99-42E1-A7DA-37C358FFD8E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeApi.Data", "HomeApi.Data\HomeApi.Data.csproj", "{0AF95116-A1AD-40CB-B893-5C6723BC646C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78959FB8-CA59-4D57-9C0C-2D248A1D525E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78959FB8-CA59-4D57-9C0C-2D248A1D525E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78959FB8-CA59-4D57-9C0C-2D248A1D525E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78959FB8-CA59-4D57-9C0C-2D248A1D525E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA10C53E-CF99-42E1-A7DA-37C358FFD8E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA10C53E-CF99-42E1-A7DA-37C358FFD8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA10C53E-CF99-42E1-A7DA-37C358FFD8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA10C53E-CF99-42E1-A7DA-37C358FFD8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF95116-A1AD-40CB-B893-5C6723BC646C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF95116-A1AD-40CB-B893-5C6723BC646C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF95116-A1AD-40CB-B893-5C6723BC646C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF95116-A1AD-40CB-B893-5C6723BC646C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
