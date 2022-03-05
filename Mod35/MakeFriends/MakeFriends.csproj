@@ -29,7 +29,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="wwwroot\css\styl" />
+      <_ContentIncludedByDefault Remove="Pages\AccountManager\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Register\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Register\RegisterPart2.cshtml" />
     </ItemGroup>
 
 </Project>
