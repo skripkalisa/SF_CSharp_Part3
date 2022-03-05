@@ -1,13 +1,13 @@
 @model MakeFriends.ViewModels.Account.RegisterViewModel
 
-@{
-  ViewData["Title"] = "Register";
-}
+@* @{ *@
+@*   ViewData["Title"] = "_RegisterPart2"; *@
+@* } *@
 <partial name="_ValidationScriptsPartial"/>
 
 
 <h2>Регистрация нового пользователя</h2>
-<form method="post" asp-controller="Register" asp-action="Register">
+<form method="post" asp-controller="Register" asp-action="RegisterPart2">
   <div asp-validation-summary="ModelOnly"></div>
   <div>
     <label asp-for="FirstName"></label><br />
