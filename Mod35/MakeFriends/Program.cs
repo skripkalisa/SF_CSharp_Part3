@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MakeFriends.Data;
 using MakeFriends.Models;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages()
@@ -12,7 +13,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
   options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+    {
+      options.Password.RequiredLength = 5;
+      options.Password.RequireNonAlphanumeric = false;
+      options.Password.RequireLowercase = false;
+      options.Password.RequireUppercase = false;
+      options.Password.RequireDigit = false;
+      options.SignIn.RequireConfirmedAccount = true;
+    }
+  
+  )
   .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 // builder.Services.AddIdentity<User, IdentityRole>()

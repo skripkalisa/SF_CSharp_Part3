@@ -3,13 +3,31 @@
 }
 
 <div class="row">
-    <div class="side">
-        Описание самой клевой соцсети
+  <div class="side">
+    <div class="center">
+      Пользуйтесь нашей самой крутой соцсетью! Регистрируйтесь всего за 2 минуты, делитесь мыслями, находите новых друзей.
     </div>
+    <img class="main-img" src="http://pngimg.com/uploads/husky/husky_PNG19.png" alt="husky"/>
+  </div>
 
 
-<div class="main">
-    <partial name="_Register" />
+  <div class="main">
+    @* <partial name="Login" model="Model.LoginView" /> *@
+    @* <partial name="Register" model="Model.RegisterView"/> *@ 
+    <partial name="Register" />
+  </div>
+
 </div>
 
-</div>
+
+@* <div class="row"> *@
+@*     <div class="side"> *@
+@*         Описание самой клевой соцсети *@
+@*     </div> *@
+@* *@
+@* *@
+@*     <div class="main"> *@
+@*         <partial name="Register" /> *@
+@*     </div> *@
+@* *@
+@* </div> *@
