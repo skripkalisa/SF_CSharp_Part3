@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <Folder Include="Log" />
+      <Folder Include="Pages" />
     </ItemGroup>
 
 </Project>

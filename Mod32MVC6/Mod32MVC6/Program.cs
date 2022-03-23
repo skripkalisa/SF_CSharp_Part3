@@ -16,7 +16,7 @@ builder.Services.AddRazorPages()
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
-// builder.Services.AddSingleton<IBlogRepository, BlogRepository>();
+// builder.Services.AddSingleton<BlogRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +26,8 @@ if (!app.Environment.IsDevelopment())
   // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
   app.UseHsts();
 }
+
+
 // Подключаем логирвоание с использованием ПО промежуточного слоя
 app.UseMiddleware<LoggingMiddleware>();
 app.UseHttpsRedirection();
