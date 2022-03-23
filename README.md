@@ -8,13 +8,13 @@
 
 ### Работа с базами данных
 
-- [Модуль 20. Введение в реляционную модель](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod20)
+- [Модуль 20. Введение в реляционную модель](#)
 
-- [Модуль 21. Язык запросов SQL](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod21)
+- [Модуль 21. Язык запросов SQL](#)
 
-- [Модуль 22. DDL и DML. Транзакции. Проектирование БД](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod22)
+- [Модуль 22. DDL и DML. Транзакции. Проектирование БД](#)
 
-- [Модуль 23. Продвинутое использование реляционной БД](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod23)
+- [Модуль 23. Продвинутое использование реляционной БД](#)
 
 ### Работа с ADO.NET
 
@@ -24,17 +24,17 @@
 
 ### Основные платформы Net Core
 
-- [Модуль 26. Введение в HTML](https://github.com/skripkalisa/SF_CSharp_Part3/tree/main/Mod26)
+- [Модуль 26. Введение в HTML](#)
 
-- [Модуль 27. Введение в CSS](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod27/LifeSpot)
+- [Модуль 27. Введение в CSS](#)
 
-- [Модуль 28. Введение в JavaScript](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod28/LifeSpot)
+- [Модуль 28. Введение в JavaScript](#)
 
-- [Модуль 29. Функции](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod29/LifeSpot)
+- [Модуль 29. Функции](#)
 
-- [Модуль 30. Объекты](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod30/LifeSpot)
+- [Модуль 30. Объекты](#)
 
-- [Модуль 31. DOM](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod31/LifeSpot)
+- [Модуль 31. DOM](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod31/LifeSpot#)
 
 - [Модуль 32. ASP.NET Core MVC. Основы платформы.](https://github.com/skripkalisa/SF_CSharp_Part3/tree/Mod32/LifeSpot)
 
