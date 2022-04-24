@@ -1,42 +1,47 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MakeFriends.Data;
+using MakeFriends.Models.Users;
+using MakeFriends.Data.Repository;
+using AutoMapper;
+using MakeFriends;
+using MakeFriends.Extensions;
 using MakeFriends.Models;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddRazorPages()
-    .AddRazorRuntimeCompilation();
+  .AddRazorRuntimeCompilation();
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
   options.UseSqlite(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-    {
-      options.Password.RequiredLength = 5;
-      options.Password.RequireNonAlphanumeric = false;
-      options.Password.RequireLowercase = false;
-      options.Password.RequireUppercase = false;
-      options.Password.RequireDigit = false;
-      options.SignIn.RequireConfirmedAccount = true;
-    }
-  
-  )
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddUnitOfWork();
+builder.Services.AddCustomRepository<Friend, FriendsRepository>();
+// builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+// .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddIdentity<User, IdentityRole>(opts => {
+    opts.Password.RequiredLength = 5;   
+    opts.Password.RequireNonAlphanumeric = false;  
+    opts.Password.RequireLowercase = false; 
+    opts.Password.RequireUppercase = false; 
+    opts.Password.RequireDigit = false;
+  })
   .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
-// builder.Services.AddIdentity<User, IdentityRole>()
-//         .AddEntityFrameworkStores<ApplicationDbContext>()
-//         .AddDefaultTokenProviders()
-//         .AddDefaultUI();
-// builder.Services.AddIdentity<User, IdentityRole>(opts => {
-//     opts.Password.RequiredLength = 5;   
-//     opts.Password.RequireNonAlphanumeric = false;  
-//     opts.Password.RequireLowercase = false; 
-//     opts.Password.RequireUppercase = false; 
-//     opts.Password.RequireDigit = false;
-//   })
+
+var mapperConfig = new MapperConfiguration((v) =>
+{
+  v.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
@@ -66,3 +71,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+

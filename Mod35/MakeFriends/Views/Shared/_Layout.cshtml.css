@@ -33,7 +33,13 @@ a {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+.background-main {
+  background-color: #edeef0;
+}
 
+.background-white {
+  background-color: white;
+}
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;

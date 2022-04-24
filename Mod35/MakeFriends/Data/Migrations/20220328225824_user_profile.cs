@@ -1,37 +1,29 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace MakeFriends.Data.Migrations
 {
-    public partial class NewUser : Migration
+    public partial class user_profile : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<DateTime>(
-                name: "BirthDate",
-                table: "AspNetUsers",
-                type: "TEXT",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
-
             migrationBuilder.AddColumn<string>(
-                name: "FirstName",
+                name: "About",
                 table: "AspNetUsers",
                 type: "TEXT",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
-                name: "LastName",
+                name: "Image",
                 table: "AspNetUsers",
                 type: "TEXT",
                 nullable: false,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
-                name: "MiddleName",
+                name: "Status",
                 table: "AspNetUsers",
                 type: "TEXT",
                 nullable: false,
@@ -41,19 +33,15 @@ namespace MakeFriends.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "BirthDate",
+                name: "About",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "FirstName",
+                name: "Image",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "LastName",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "MiddleName",
+                name: "Status",
                 table: "AspNetUsers");
         }
     }

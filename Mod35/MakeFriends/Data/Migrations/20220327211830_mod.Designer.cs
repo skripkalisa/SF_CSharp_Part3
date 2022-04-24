@@ -11,13 +11,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MakeFriends.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220305110035_NewUser")]
-    partial class NewUser
+    [Migration("20220327211830_mod")]
+    partial class mod
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
 
             modelBuilder.Entity("MakeFriends.Models.User", b =>
                 {
@@ -53,10 +53,6 @@ namespace MakeFriends.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MiddleName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NormalizedEmail")

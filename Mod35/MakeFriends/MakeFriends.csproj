@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
         <Nullable>enable</Nullable>
-        <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>aspnet-MakeFriends-D7B2FEC9-D605-4EC8-85B5-0ADBE36CFA58</UserSecretsId>
+        <UserSecretsId>aspnet-MakeFriends-E763A000-2065-44AE-9509-EE545027B2DB</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,25 +13,34 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Acr.UserDialogs" Version="7.2.0.562" />
         <PackageReference Include="AutoMapper" Version="11.0.1" />
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.2" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+        <PackageReference Include="EntityFrameworkCore.Data.Repository.Abstractions" Version="6.0.6" />
+        <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork" Version="6.0.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Metadata" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.4" />
+        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.4" />
+        <PackageReference Include="System.Reflection.Metadata" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\AccountManager\Login.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\Register\Register.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\Register\RegisterPart2.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\AccountManager\User.cshtml" />
     </ItemGroup>
 
 </Project>
