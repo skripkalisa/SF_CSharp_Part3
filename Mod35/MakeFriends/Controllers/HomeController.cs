@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 using MakeFriends.Models;
 using MakeFriends.Models.Users;
-using MakeFriends.ViewModels.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

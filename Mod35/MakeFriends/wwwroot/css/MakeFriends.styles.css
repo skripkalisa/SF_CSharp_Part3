@@ -85,7 +85,7 @@
 }
 
 .friendcontainer {
-    overflow: hidden;
+    overflow: auto;
 }
 
 .friendbox {
@@ -95,4 +95,5 @@
 .friendbox .datadiv {
     display: inline-block;
     max-width: 150px;
+    vertical-align: text-top;
 }

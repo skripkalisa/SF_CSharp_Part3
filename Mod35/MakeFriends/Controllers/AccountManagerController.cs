@@ -37,15 +37,15 @@ public class AccountManagerController : Controller
   {
     var userGen = new GenerateUsers();
     var userList = userGen.Populate(35);
-  
+
     foreach (var user in userList)
     {
       var result = await _userManager.CreateAsync(user, "123456");
-  
+
       if (!result.Succeeded)
         continue;
     }
-  
+
     return RedirectToAction("Index", "Home");
   }
 
@@ -84,7 +84,7 @@ public class AccountManagerController : Controller
 
     Debug.Assert(repository != null, nameof(repository) + " != null");
     return Task.FromResult(repository.GetFriendsByUser(user));
-  }  
+  }
   // private async Task<List<User>> GetAllFriend(User user)
   // {
   //   var repository = _unitOfWork.GetRepository<Friend>() as FriendsRepository;
@@ -232,8 +232,15 @@ public class AccountManagerController : Controller
 
     var result = await _userManager.GetUserAsync(currentUser);
 
-    var list = _userManager.Users.AsEnumerable().Where(x => x.GetFullName().ToLower().Contains(search.ToLower()))
-      .ToList();
+    // var list = _userManager.Users.AsEnumerable().Where(x => x.GetFullName().ToLower().Contains(search.ToLower()))
+    //   .ToList();
+
+    var list = _userManager.Users.AsEnumerable().ToList();
+    if (!string.IsNullOrEmpty(search))
+    {
+      list = list.Where(x => x.GetFullName().ToLower().Contains(search.ToLower())).ToList();
+    }
+
     var getFriend = await GetAllFriend();
 
     var data = new List<UserWithFriendExt>();
@@ -309,7 +316,7 @@ public class AccountManagerController : Controller
     {
       Sender = result,
       Recipient = friend,
-      Text = chat.NewMessage.Text,
+      Text = chat.NewMessage.Text
     };
     Debug.Assert(repository != null, nameof(repository) + " != null");
     repository.Create(item);
