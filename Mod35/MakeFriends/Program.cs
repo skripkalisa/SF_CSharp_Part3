@@ -6,7 +6,6 @@ using MakeFriends.Data.Repository;
 using AutoMapper;
 using MakeFriends;
 using MakeFriends.Extensions;
-using MakeFriends.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddUnitOfWork();
 builder.Services.AddCustomRepository<Friend, FriendsRepository>();
+builder.Services.AddCustomRepository<Message, MessageRepository>();
 // builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 // .AddEntityFrameworkStores<ApplicationDbContext>();
 

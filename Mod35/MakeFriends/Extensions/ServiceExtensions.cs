@@ -3,7 +3,7 @@ using MakeFriends.Data.UoW;
 
 namespace MakeFriends.Extensions;
 
-public static class ServiceExtentions
+public static class ServiceExtensions
 {
   public static IServiceCollection AddUnitOfWork(this IServiceCollection services)
   {
@@ -12,11 +12,11 @@ public static class ServiceExtentions
     return services;
   }
 
-  public static IServiceCollection AddCustomRepository<TEntity, TRepository>(this IServiceCollection services)
+  public static IServiceCollection AddCustomRepository<TEntity, IRepository>(this IServiceCollection services)
     where TEntity : class
-    where TRepository : class, IRepository<TEntity>
+    where IRepository : class, IRepository<TEntity>
   {
-    services.AddScoped<IRepository<TEntity>, TRepository>();
+    services.AddScoped<IRepository<TEntity>, IRepository>();
 
     return services;
   }

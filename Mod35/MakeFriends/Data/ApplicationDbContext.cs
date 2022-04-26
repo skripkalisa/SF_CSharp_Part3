@@ -1,5 +1,4 @@
 ﻿using MakeFriends.Configs;
-using MakeFriends.Models;
 using MakeFriends.Models.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -19,5 +18,6 @@ public sealed class ApplicationDbContext : IdentityDbContext<User>
     base.OnModelCreating(builder);
 
     builder.ApplyConfiguration(new FriendConfiguration());
+    builder.ApplyConfiguration(new MessageConfiguration());
   }
 }

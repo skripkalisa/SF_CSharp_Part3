@@ -1,11 +1,11 @@
-using MakeFriends.Models;
+using MakeFriends.Models.Users;
 using MakeFriends.ViewModels.Account;
 
 namespace MakeFriends.Extensions;
 
-public static class UserFromModel 
+public static class UserFromModel
 {
-  public static User Convert(this User user, UserEditViewModel usereditvm) 
+  public static User Convert(this User user, UserEditViewModel usereditvm)
   {
     user.Image = usereditvm.Image;
     user.LastName = usereditvm.LastName;

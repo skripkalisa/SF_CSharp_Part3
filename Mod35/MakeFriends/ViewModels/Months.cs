@@ -7,25 +7,25 @@ public enum Months
   [Display(Name = "Январь")]
   Jan = 1,
   [Display(Name = "Февраль")]
-  Feb,
+  Feb = 2,
   [Display(Name = "Март")]
-  March,
+  March = 3,
   [Display(Name = "Апрель")]
-  April,
+  April = 4,
   [Display(Name = "Май")]
-  May,
+  May = 5,
   [Display(Name = "Июнь")]
-  June,
+  June = 6,
   [Display(Name = "Июль")]
-  July,
+  July = 7,
   [Display(Name = "Август")]
-  Aug,
+  Aug = 8,
   [Display(Name = "Сентябрь")]
-  Sept,
+  Sept = 9,
   [Display(Name = "Октябрь")]
-  Oct,
+  Oct = 10,
   [Display(Name = "Ноябрь")]
-  Nov,
+  Nov = 11,
   [Display(Name = "Декабрь")]
-  Dec
+  Dec = 12
 }

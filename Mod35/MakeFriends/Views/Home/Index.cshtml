@@ -1,13 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<User> _signInManager
-@inject UserManager<User> _userManager;
+@using MakeFriends.Models.Users
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager;
 @model dynamic
-@* @model MakeFriends.ViewModels.Account.MainViewModel; *@
 
 @{
   ViewData["Title"] = "Главная";
 }
-@if (_signInManager.IsSignedIn(User))
+@if (SignInManager.IsSignedIn(User))
 {
     <div>Hello @User.Identity?.Name!</div>
 }

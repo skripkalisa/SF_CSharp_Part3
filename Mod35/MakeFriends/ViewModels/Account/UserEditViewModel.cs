@@ -1,4 +1,3 @@
-
 using System.ComponentModel.DataAnnotations;
 
 namespace MakeFriends.ViewModels.Account;
@@ -11,11 +10,11 @@ public class UserEditViewModel
 
         [DataType(DataType.Text)]
         [Display(Name = "Имя", Prompt = "Введите имя")]
-        public string FirstName { get; set; } = default!;
+        public string? FirstName { get; set; } 
 
         [DataType(DataType.Text)]
         [Display(Name = "Фамилия", Prompt = "Введите фамилию")]
-        public string LastName { get; set; } = default!;
+        public string? LastName { get; set; }
 
         [EmailAddress]
         [Display(Name = "Email", Prompt = "example.com")]

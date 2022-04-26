@@ -1,4 +1,3 @@
-using MakeFriends.Models;
 using MakeFriends.Models.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,9 +5,11 @@ namespace MakeFriends.Data.Repository;
 
 public class FriendsRepository : Repository<Friend>
 {
-  public FriendsRepository(ApplicationDbContext db) : base(db)
+  public FriendsRepository(ApplicationDbContext db)
+    : base(db)
   {
   }
+
 
   public void AddFriend(User target, User friend)
   {
@@ -28,13 +29,14 @@ public class FriendsRepository : Repository<Friend>
     }
   }
 
-  public List<User> GetFriendsByUser(User target)
+  public List<User?> GetFriendsByUser(User target)
   {
-    var friends = Set.Include(x => x.CurrentFriend).AsEnumerable().Where(x => x.User.Id == target.Id)
+    var friends = Set.Include(x => x.CurrentFriend).AsEnumerable().Where(x => x.User?.Id == target.Id)
       .Select(x => x.CurrentFriend);
 
     return friends.ToList();
   }
+
 
   public void DeleteFriend(User target, User friend)
   {

@@ -1,15 +1,14 @@
-﻿using MakeFriends.Models;
-using MakeFriends.Models.Users;
+﻿using MakeFriends.Models.Users;
 
 namespace MakeFriends.ViewModels.Account;
 
 public class ChatViewModel
 {
-    public User You { get; set; } = default! ;
+    public User? You { get; set; }
 
-    public User ToWhom { get; set; } = default! ;
+    public User? ToWhom { get; set; }
 
-    public List<Message> History { get; set; } = default! ;
+    public List<Message>? History { get; set; }
 
     public MessageViewModel NewMessage { get; set; }
 

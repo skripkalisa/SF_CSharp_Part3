@@ -1,25 +1,27 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace MakeFriends.Models;
+namespace MakeFriends.Models.Users;
 
 public class User : IdentityUser
 {
-  public string FirstName { get; set; } = default! ;
+  public string? FirstName { get; set; }
 
-  public string LastName { get; set; } = default! ;
+  public string? LastName { get; set; }
 
-  public string? MiddleName { get; set; } 
+  public string? MiddleName { get; set; }
 
   public DateTime BirthDate { get; set; }
+
   public string Image { get; set; }
 
   public string Status { get; set; }
 
+
   public string About { get; set; }
 
-  public string GetFullName() 
+  public string GetFullName()
   {
-    return $"{LastName} {FirstName} {MiddleName}";
+    return FirstName + " " + MiddleName + " " + LastName;
   }
 
   public User() 

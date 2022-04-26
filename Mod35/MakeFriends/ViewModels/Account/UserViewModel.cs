@@ -1,4 +1,4 @@
-using MakeFriends.Models;
+using MakeFriends.Models.Users;
 
 namespace MakeFriends.ViewModels.Account;
 

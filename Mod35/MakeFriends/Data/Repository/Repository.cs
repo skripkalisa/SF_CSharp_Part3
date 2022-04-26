@@ -4,14 +4,14 @@ namespace MakeFriends.Data.Repository;
 
 public class Repository<T> : IRepository<T> where T : class
 {
-  private readonly DbContext _db;
+  protected readonly DbContext _db;
 
-  protected DbSet<T> Set { get; }
+  public DbSet<T> Set { get; private set; }
 
   public Repository(ApplicationDbContext db)
   {
     _db = db;
-    var set =_db.Set<T>();
+    var set = _db.Set<T>();
     set.Load();
 
     Set = set;
@@ -31,10 +31,8 @@ public class Repository<T> : IRepository<T> where T : class
 
   public T Get(int id)
   {
-
     return Set.Find(id);
   }
-
 
   public IEnumerable<T> GetAll()
   {
