@@ -6,6 +6,5 @@ public class User : PageModel
 {
   public void OnGet()
   {
-    
   }
 }

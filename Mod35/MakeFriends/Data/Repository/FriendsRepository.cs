@@ -42,9 +42,6 @@ public class FriendsRepository : Repository<Friend>
   {
     var friends = Set.AsEnumerable().FirstOrDefault(x => x.UserId == target.Id && x.CurrentFriendId == friend.Id);
 
-    if (friends != null)
-    {
-      Delete(friends);
-    }
+    if (friends != null) Delete(friends);
   }
 }

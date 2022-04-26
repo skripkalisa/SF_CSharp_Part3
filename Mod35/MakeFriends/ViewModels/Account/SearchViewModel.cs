@@ -2,6 +2,5 @@
 
 public class SearchViewModel
 {
-    public List<UserWithFriendExt> UserList { get; set; } = default! ;
-   
+  public List<UserWithFriendExt> UserList { get; set; } = default!;
 }

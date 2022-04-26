@@ -4,14 +4,15 @@ namespace MakeFriends.Data;
 
 public class GenerateUsers
 {
-  private readonly string[] _maleNames = new string[] { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
-  private readonly string[] _femaleNames = new string[] { "Анна", "Мария", "Станислава", "Елена" };
-  private readonly string[] _lastNames = new string[] { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
+  private readonly string[] _maleNames = { "Александро", "Борис", "Василий", "Игорь", "Даниил", "Сергей", "Евгений", "Алексей", "Геогрий", "Валентин" };
+
+  private readonly string[] _femaleNames = { "Анна", "Мария", "Станислава", "Елена" };
+  private readonly string[] _lastNames = { "Тестов", "Титов", "Потапов", "Джабаев", "Иванов" };
 
   public List<User> Populate(int count)
   {
     var users = new List<User>();
-    for (int i = 1; i < count; i++)
+    for (var i = 1; i < count; i++)
     {
       string firstName;
       var rand = new Random();
@@ -25,7 +26,7 @@ public class GenerateUsers
       }
       else
       {
-        lastName = lastName + "a";
+        lastName += "a";
         firstName = _femaleNames[rand.Next(0, _femaleNames.Length - 1)];
       }
 
@@ -34,7 +35,7 @@ public class GenerateUsers
         FirstName = firstName,
         LastName = lastName,
         BirthDate = DateTime.Now.AddDays(-rand.Next(1, (DateTime.Now - DateTime.Now.AddYears(-25)).Days)),
-        Email = "test" + rand.Next(0, 1204) + "@test.com",
+        Email = "test" + rand.Next(0, 1204) + "@test.com"
       };
 
       item.UserName = item.Email;

@@ -24,11 +24,10 @@ public class User : IdentityUser
     return FirstName + " " + MiddleName + " " + LastName;
   }
 
-  public User() 
+  public User()
   {
     Image = "https://thispersondoesnotexist.com/image";
     Status = "Ура! Я в соцсети!";
     About = "Информация обо мне.";
   }
-
 }

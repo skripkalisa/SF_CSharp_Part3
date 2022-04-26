@@ -85,13 +85,6 @@ public class AccountManagerController : Controller
     Debug.Assert(repository != null, nameof(repository) + " != null");
     return Task.FromResult(repository.GetFriendsByUser(user));
   }
-  // private async Task<List<User>> GetAllFriend(User user)
-  // {
-  //   var repository = _unitOfWork.GetRepository<Friend>() as FriendsRepository;
-  //
-  //   Debug.Assert(repository != null, nameof(repository) + " != null");
-  //   return repository.GetFriendsByUser(user);
-  // }
 
   private async Task<List<User>> GetAllFriend()
   {
@@ -131,13 +124,9 @@ public class AccountManagerController : Controller
 
       var result = await _userManager.UpdateAsync(user);
       if (result.Succeeded)
-      {
         return RedirectToAction("MyPage", "AccountManager");
-      }
       else
-      {
         return RedirectToAction("Edit", "AccountManager");
-      }
     }
     else
     {
@@ -158,13 +147,9 @@ public class AccountManagerController : Controller
       var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
 
       if (result.Succeeded)
-      {
         return RedirectToAction("MyPage", "AccountManager");
-      }
       else
-      {
         ModelState.AddModelError("", "Неправильный логин и (или) пароль");
-      }
     }
 
     return RedirectToAction("Index", "Home");
@@ -232,14 +217,10 @@ public class AccountManagerController : Controller
 
     var result = await _userManager.GetUserAsync(currentUser);
 
-    // var list = _userManager.Users.AsEnumerable().Where(x => x.GetFullName().ToLower().Contains(search.ToLower()))
-    //   .ToList();
 
     var list = _userManager.Users.AsEnumerable().ToList();
     if (!string.IsNullOrEmpty(search))
-    {
       list = list.Where(x => x.GetFullName().ToLower().Contains(search.ToLower())).ToList();
-    }
 
     var getFriend = await GetAllFriend();
 
@@ -285,7 +266,7 @@ public class AccountManagerController : Controller
     {
       You = result,
       ToWhom = friend,
-      History = mess.OrderBy(x => x.Id).ToList(),
+      History = mess.OrderBy(x => x.Id).ToList()
     };
 
     return model;

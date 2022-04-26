@@ -26,7 +26,6 @@ public class RegisterController : Controller
   public IActionResult Register()
   {
     return View();
-    // return View("Home/Register");
   }
 
   [Route("RegisterPart2")]
@@ -37,7 +36,6 @@ public class RegisterController : Controller
   }
 
 
-
   [Route("Register")]
   [HttpPost]
   public async Task<IActionResult> Register(RegisterViewModel model)
@@ -45,7 +43,7 @@ public class RegisterController : Controller
     if (ModelState.IsValid)
     {
       var user = _mapper.Map<User>(model);
-               
+
       var result = await _userManager.CreateAsync(user, model.PasswordReg);
       if (result.Succeeded)
       {
@@ -54,12 +52,10 @@ public class RegisterController : Controller
       }
       else
       {
-        foreach (var error in result.Errors)
-        {
-          ModelState.AddModelError(string.Empty, error.Description);
-        }
+        foreach (var error in result.Errors) ModelState.AddModelError(string.Empty, error.Description);
       }
     }
+
     return View("RegisterPart2", model);
   }
 }

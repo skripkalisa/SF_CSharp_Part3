@@ -11,6 +11,7 @@ public class HomeController : Controller
   private readonly ILogger<HomeController> _logger;
 
   private readonly SignInManager<User> _signInManager;
+
   public HomeController(ILogger<HomeController> logger, SignInManager<User> signInManager)
   {
     _logger = logger;
@@ -21,13 +22,9 @@ public class HomeController : Controller
   [Route("[controller]/[action]")]
   public IActionResult Index()
   {
-    if (_signInManager.IsSignedIn(User)) 
-    {
-      return RedirectToAction("MyPage", "AccountManager");
-    }
+    if (_signInManager.IsSignedIn(User)) return RedirectToAction("MyPage", "AccountManager");
 
     return View();
-    // return View(new MainViewModel());
   }
 
   [Route("[action]")]

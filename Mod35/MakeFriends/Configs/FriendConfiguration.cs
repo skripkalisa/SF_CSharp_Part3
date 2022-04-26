@@ -6,7 +6,6 @@ namespace MakeFriends.Configs;
 
 public class FriendConfiguration : IEntityTypeConfiguration<Friend>
 {
-
   public void Configure(EntityTypeBuilder<Friend> builder)
   {
     builder.ToTable("UserFriends").HasKey(p => p.Id);

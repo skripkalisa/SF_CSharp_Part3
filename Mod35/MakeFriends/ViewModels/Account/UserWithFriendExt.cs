@@ -1,9 +1,8 @@
 ﻿using MakeFriends.Models.Users;
 
-namespace MakeFriends.ViewModels.Account
+namespace MakeFriends.ViewModels.Account;
+
+public class UserWithFriendExt : User
 {
-    public class UserWithFriendExt: User
-    {
-        public bool IsFriendWithCurrent { get; set; }
-    }
+  public bool IsFriendWithCurrent { get; set; }
 }

@@ -20,26 +20,23 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddUnitOfWork();
 builder.Services.AddCustomRepository<Friend, FriendsRepository>();
 builder.Services.AddCustomRepository<Message, MessageRepository>();
-// builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-// .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddIdentity<User, IdentityRole>(opts => {
-    opts.Password.RequiredLength = 5;   
-    opts.Password.RequireNonAlphanumeric = false;  
-    opts.Password.RequireLowercase = false; 
-    opts.Password.RequireUppercase = false; 
+
+builder.Services.AddIdentity<User, IdentityRole>(opts =>
+  {
+    opts.Password.RequiredLength = 5;
+    opts.Password.RequireNonAlphanumeric = false;
+    opts.Password.RequireLowercase = false;
+    opts.Password.RequireUppercase = false;
     opts.Password.RequireDigit = false;
   })
   .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
 
-var mapperConfig = new MapperConfiguration((v) =>
-{
-  v.AddProfile(new MappingProfile());
-});
+var mapperConfig = new MapperConfiguration((v) => { v.AddProfile(new MappingProfile()); });
 
-IMapper mapper = mapperConfig.CreateMapper();
+var mapper = mapperConfig.CreateMapper();
 
 builder.Services.AddSingleton(mapper);
 
@@ -66,9 +63,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-  name: "default",
-  pattern: "{controller=Home}/{action=Index}/{id?}");
+  "default",
+  "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
-

@@ -2,7 +2,7 @@ using MakeFriends.Data.Repository;
 
 namespace MakeFriends.Data.UoW;
 
-public interface IUnitOfWork: IDisposable
+public interface IUnitOfWork : IDisposable
 {
   int SaveChanges(bool ensureAutoHistory = false);
 

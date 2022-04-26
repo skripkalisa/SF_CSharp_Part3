@@ -9,38 +9,38 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="11.0.1" />
-        <PackageReference Include="EntityFrameworkCore.Data.Repository.Abstractions" Version="6.0.6" />
-        <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork" Version="6.0.6" />
-        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.Metadata" Version="6.0.4" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.4" />
-        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.4" />
+        <PackageReference Include="AutoMapper" Version="11.0.1"/>
+        <PackageReference Include="EntityFrameworkCore.Data.Repository.Abstractions" Version="6.0.6"/>
+        <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork" Version="6.0.6"/>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.AspNetCore.Metadata" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.4"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.4" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.4" />
-        <PackageReference Include="System.Reflection.Metadata" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.4"/>
+        <PackageReference Include="System.Reflection.Metadata" Version="6.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\AccountManager\User.cshtml" />
+        <_ContentIncludedByDefault Remove="Pages\AccountManager\User.cshtml"/>
     </ItemGroup>
 
 </Project>
